@@ -118,7 +118,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         int columnCount = getResources().getInteger(R.integer.list_column_count);
         StaggeredGridLayoutManager sglm =
                 new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
-       // LinearLayoutManager linearLayout = new LinearLayoutManager(this);
+
         mRecyclerView.setLayoutManager(sglm);
     }
 
