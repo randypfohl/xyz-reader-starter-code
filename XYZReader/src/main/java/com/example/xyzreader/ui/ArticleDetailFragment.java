@@ -101,19 +101,6 @@ public class ArticleDetailFragment extends Fragment implements
         return mRootView;
     }
 
-
-
-    private Date parsePublishedDate() {
-        try {
-            String date = mCursor.getString(ArticleLoader.Query.PUBLISHED_DATE);
-            return dateFormat.parse(date);
-        } catch (ParseException ex) {
-            Log.e(TAG, ex.getMessage());
-            Log.i(TAG, "passing today's date");
-            return new Date();
-        }
-    }
-
     private void bindViews() {
         if (mRootView == null) {
             return;
@@ -131,6 +118,11 @@ public class ArticleDetailFragment extends Fragment implements
             recyclerView.setLayoutManager(manager);
             recyclerView.setAdapter(articleAdapter);
             articleAdapter.notifyDataSetChanged();
+
+            String title = mCursor.getString(ArticleLoader.Query.TITLE);
+            String author = mCursor.getString(ArticleLoader.Query.AUTHOR);
+
+            getActivityCast().setTitle(title, author);
         }
     }
 

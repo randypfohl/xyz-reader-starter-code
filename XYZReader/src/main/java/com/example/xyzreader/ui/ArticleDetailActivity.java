@@ -16,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
 import com.example.xyzreader.R;
@@ -50,6 +51,12 @@ public class ArticleDetailActivity extends AppCompatActivity
 
     @BindView(R.id.photo_toolbar)
     ImageView mArticleImage;
+
+    @BindView(R.id.toolbar_title)
+    TextView title;
+
+    @BindView(R.id.toolbar_author_tv)
+    TextView author;
 
     Unbinder unbinder;
     private Cursor mCursor;
@@ -137,6 +144,13 @@ public class ArticleDetailActivity extends AppCompatActivity
         mPagerAdapter.notifyDataSetChanged();
     }
 
+
+    public void setTitle(String title, String author){
+        this.title.setText(title);
+        this.author.setText(author);
+    }
+
+
     private class MyPagerAdapter extends FragmentPagerAdapter{
 
         public MyPagerAdapter(FragmentManager fm) {
@@ -166,4 +180,5 @@ public class ArticleDetailActivity extends AppCompatActivity
             return (mCursor != null) ? mCursor.getCount() : 0;
         }
     }
+
 }
