@@ -1,15 +1,15 @@
 package com.example.xyzreader.ui;
 
-import android.app.LoaderManager;
 import android.content.Intent;
-import android.content.Loader;
 import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.LoaderManager;
 import android.support.v4.app.ShareCompat;
+import android.support.v4.content.Loader;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -56,7 +56,6 @@ public class ArticleDetailActivity extends AppCompatActivity
     private long mStartId;
 
     private long mSelectedItemId;
-    private int mSelectedItemUpButtonFloor = Integer.MAX_VALUE;
     private MyPagerAdapter mPagerAdapter;
 
     @Override
@@ -74,7 +73,7 @@ public class ArticleDetailActivity extends AppCompatActivity
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        getLoaderManager().initLoader(0, null, this);
+        getSupportLoaderManager().initLoader(0, null, this);
 
         mPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
@@ -148,9 +147,6 @@ public class ArticleDetailActivity extends AppCompatActivity
         public void setPrimaryItem(ViewGroup container, int position, Object object) {
             super.setPrimaryItem(container, position, object);
             ArticleDetailFragment fragment = (ArticleDetailFragment) object;
-            if (fragment != null) {
-                mSelectedItemUpButtonFloor = fragment.getUpButtonFloor();
-            }
             mCursor.moveToPosition(position);
             String photoUrl = mCursor.getString(ArticleLoader.Query.PHOTO_URL);
             Picasso.get().load(photoUrl).placeholder(R.drawable.photo_background_protection)
@@ -161,7 +157,8 @@ public class ArticleDetailActivity extends AppCompatActivity
         @Override
         public Fragment getItem(int position) {
             mCursor.moveToPosition(position);
-            return ArticleDetailFragment.newInstance(mCursor.getLong(ArticleLoader.Query._ID));
+            long id = mCursor.getLong(ArticleLoader.Query._ID);
+            return ArticleDetailFragment.newInstance(id);
         }
 
         @Override
