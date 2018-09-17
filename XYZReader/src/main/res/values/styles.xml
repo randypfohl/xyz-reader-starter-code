@@ -17,12 +17,76 @@
 
 <resources>
 
-    <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <style name="XYZ" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
 
     </style>
 
-    <style name="Theme.Bacon.Detail">
-        <item name="android:statusBarColor">@android:color/transparent</item>
+    <style name="XYZ.Detail" parent ="XYZ">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorSecondary</item>
     </style>
+
+    <!--<style name="DetailAppTheme" parent ="AppTheme">-->
+        <!--<item name="android:fontFamily">@font/raleway</item>-->
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+    <!--</style>-->
+    <!--<item name="android:fontFamily">@font/raleway</item>-->
+
+    <style name="ArticleListCardView">
+        <item name="android:background">@color/colorSecondary</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:foreground">?selectableItemBackground</item>
+    </style>
+
+    <style name="ArticleListTitle" parent="@style/TextAppearance.AppCompat.Subhead">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorSecondaryDark</item>
+    </style>
+
+
+
+    <!--<style name="ArticleTitle">-->
+        <!--<item name="android:fontFamily">@font/raleway</item>-->
+        <!--<item name="android:textSize">@dimen/article_title_text_size</item>-->
+        <!--<item name="android:textColor">@color/article_card_view_text</item>-->
+    <!--</style>-->
+
+    <!--<style name="ArticleSubtitle">-->
+        <!--<item name="android:fontFamily">@font/raleway</item>-->
+        <!--<item name="android:textSize">@dimen/article_subtitle_text_size</item>-->
+        <!--<item name="android:textColor">@color/article_card_view_sub</item>-->
+    <!--</style>-->
+
+    <!--<style name="ArticleDetailTitle">-->
+        <!--<item name="android:fontFamily">@font/raleway</item>-->
+        <!--<item name="android:textSize">@dimen/article_detail_title</item>-->
+        <!--<item name="android:padding">@dimen/article_title_padding</item>-->
+        <!--<item name="android:textStyle">bold</item>-->
+        <!--<item name="android:textColor">@color/title_detail_text_color</item>-->
+    <!--</style>-->
+
+    <!--<style name="ArticleDate">-->
+        <!--<item name="android:fontFamily">@font/raleway</item>-->
+        <!--<item name="android:textSize">@dimen/article_detail_date</item>-->
+        <!--<item name="android:textColor">@color/detail_date_color</item>-->
+    <!--</style>-->
+    <!--<style name="ArticleAuthor">-->
+        <!--<item name="android:fontFamily">@font/raleway</item>-->
+        <!--<item name="android:textSize">@dimen/article_detail_author</item>-->
+        <!--<item name="android:textColor">@color/title_detail_text_color</item>-->
+        <!--<item name="android:textStyle">bold</item>-->
+    <!--</style>-->
+
+    <!--<style name="ArticleBody">-->
+        <!--<item name="android:fontFamily">@font/raleway</item>-->
+        <!--<item name="android:textSize">@dimen/article_body_text_size</item>-->
+        <!--<item name="android:paddingTop">@dimen/article_body_top_padding</item>-->
+        <!--<item name="android:paddingStart">@dimen/article_body_lateral_padding</item>-->
+        <!--<item name="android:paddingEnd">@dimen/article_body_lateral_padding</item>-->
+    <!--</style>-->
 
 </resources>
