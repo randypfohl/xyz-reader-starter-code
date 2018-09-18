@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="XYZ" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
 
@@ -35,16 +35,41 @@
     <!--<item name="android:fontFamily">@font/raleway</item>-->
 
     <style name="ArticleListCardView">
-        <item name="android:background">@color/colorSecondary</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_margin">8dp</item>
+        <item name="android:elevation" tools:targetApi="lollipop">15dp</item>
         <item name="android:foreground">?selectableItemBackground</item>
     </style>
 
-    <style name="ArticleListTitle" parent="@style/TextAppearance.AppCompat.Subhead">
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/colorSecondaryDark</item>
+    <style name="ArticleListTitle" parent="@style/TextAppearance.AppCompat.Subhead" >
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+
+    <style name="ArticleListSubtitle" parent="@style/TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="ArticleBackground">
+        <item name="android:background">@color/colorSecondaryDark</item>
+    </style>
+
+    <style name="ArticleListToolbar">
+
+
     </style>
 
 
