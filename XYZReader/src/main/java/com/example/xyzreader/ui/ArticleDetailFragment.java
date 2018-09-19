@@ -101,6 +101,18 @@ public class ArticleDetailFragment extends Fragment implements
         return mRootView;
     }
 
+    @Override
+    public void onResume() {
+        if (mCursor != null) {
+
+            String title = mCursor.getString(ArticleLoader.Query.TITLE);
+            String author = mCursor.getString(ArticleLoader.Query.AUTHOR);
+
+            getActivityCast().setTitle(title, author);
+        }
+        super.onResume();
+    }
+
     private void bindViews() {
         if (mRootView == null) {
             return;

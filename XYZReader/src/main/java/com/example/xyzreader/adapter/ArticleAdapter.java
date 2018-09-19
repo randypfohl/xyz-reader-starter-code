@@ -16,7 +16,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
     Context context;
 
     public ArticleAdapter(String body, Context context){
-         this.body= body.split("\\r\\n"); // "[\\r\\n]+" removes too much, no line breaks. hard to read.
+         this.body= body.split("[\\r\\n]+");
          this.context = context;
     }
 
